@@ -82,42 +82,42 @@ if (!payment_hash) {
 
 //-------------------------Mint-Lock----------------------
 
-// //===============Đọc mã CBOR của SC  ============================
-// async function readValidator(): Promise<SpendingValidator> {
-//   const validator = JSON.parse(await Deno.readTextFile("plutus.json")).validators[0];
-//       return {
-//         type: "PlutusV3",
-//         script: toHex(cbor.encode(fromHex(validator.compiledCode))),
-//       };
-//     }
+//===============Đọc mã CBOR của SC  ============================
+async function readValidator(): Promise<SpendingValidator> {
+  const validator = JSON.parse(await Deno.readTextFile("plutus.json")).validators[0];
+      return {
+        type: "PlutusV3",
+        script: toHex(cbor.encode(fromHex(validator.compiledCode))),
+      };
+    }
 
 
-// const validator = await readValidator();
-// const parameterized_cbor = applyParamsToScript([fromText("BK02_31")],validator.script);
-// const parameterized_script = lucid.newScript({
-//   type: "PlutusV3",
-//   script: parameterized_cbor,
-// });
+const validator = await readValidator();
+const parameterized_cbor = applyParamsToScript([fromText("BK02_31")],validator.script);
+const parameterized_script = lucid.newScript({
+  type: "PlutusV3",
+  script: parameterized_cbor,
+});
 
-// const scriptAddress =parameterized_script.toAddress();
-// console.log(`Địa chỉ Parameterized script là: ${scriptAddress}`);
+const scriptAddress =parameterized_script.toAddress();
+console.log(`Địa chỉ Parameterized script là: ${scriptAddress}`);
 
-//------Mint policyID từ script đã tạo và đặt tên cho NFT theo policyID đã mint--------
-// const policyId = parameterized_script.toHash();
-// const unit = policyId + fromText("BK02_31");
-// console.log(`Tên của tài sản dạng hex là: ${unit}`);
+------Mint policyID từ script đã tạo và đặt tên cho NFT theo policyID đã mint--------
+const policyId = parameterized_script.toHash();
+const unit = policyId + fromText("BK02_31");
+console.log(`Tên của tài sản dạng hex là: ${unit}`);
 
-// // 0 tương ứng với vị trí đầu tiên của của redeemer trong aiken=Mint
-// const mintRedeemer = Data.to(new Constr(0, []));
+// 0 tương ứng với vị trí đầu tiên của của redeemer trong aiken=Mint
+const mintRedeemer = Data.to(new Constr(0, []));
 
-// const tx = await lucid
-//       .newTx()
-//       .mint({[unit]: 1n},mintRedeemer)
-//       .attachScript(parameterized_script)
-//       .commit();
-// const signedTx = await tx.sign().commit();
-// const txHash = await signedTx.submit();
-// console.log(`A NFT was mint at tx:    https://preview.cexplorer.io/tx/${txHash} `);
+const tx = await lucid
+      .newTx()
+      .mint({[unit]: 1n},mintRedeemer)
+      .attachScript(parameterized_script)
+      .commit();
+const signedTx = await tx.sign().commit();
+const txHash = await signedTx.submit();
+console.log(`A NFT was mint at tx:    https://preview.cexplorer.io/tx/${txHash} `);
 
 //-------------------Burn-Unlock--------------------
 
