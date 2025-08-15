@@ -46,7 +46,7 @@ console.log(`tx: ${tx}`);
 let signedTx = await tx.sign().commit();
 let txHash = await signedTx.submit();
   
-console.log(`Transaction hash: https://preview.cexplorer.io/tx/${txHash}`);  Lưu ý: Phải để biến assetname dưới dạng Text và thêm fromtext ở trên thư viên import lệnh đầu tiên.
+console.log(`Transaction hash: https://preview.cexplorer.io/tx/${txHash}`);  //Lưu ý: Phải để biến assetname dưới dạng Text và thêm fromtext ở trên thư viên import lệnh đầu tiên.
 
 
 
@@ -177,8 +177,8 @@ const myAddress = "addr_test1qzhx5h84aqv3sjl9ylup5636amed0w43c3h7znml4ehf27654vw
 
 async function main() {
       try {
-      // const txHash = await lockUtxo(lovelace_lock); // Khóa 2 ADA (2_000_000 lovelace)
-      // console.log(`Transaction hash: ${txHash}`);
+      const txHash = await lockUtxo(lovelace_lock); // Khóa 2 ADA (2_000_000 lovelace)
+      console.log(`Transaction hash: ${txHash}`);
       
       
       // Gọi hàm redeemUtxo để mở khóa UTxO
