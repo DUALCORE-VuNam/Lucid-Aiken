@@ -36,14 +36,15 @@ type DatumSchemaType = Data.Static<typeof DatumSchema>;  //Khai báo kiểu
     console.log("Datum content:", json);
     const datumInline = Data.to(datum , DatumSchema);
     console.log(datumInline);
-    // const tx = await lucid.newTx()
-    // .payToWithData(toAddress, datumInline , { lovelace: amount })
-    // .commit();
-    // //Ký giao dịch
-    // const signedTx = await tx.sign().commit();
-    //  //Gửi giao dịch
-    // const txHash = await signedTx.submit();
-    // console.log(`Bạn có thể kiểm tra giao dịch tại: https://preview.cexplorer.io/tx/${txHash}`);
+// ---------------------------------------------------------------------------
+    const tx = await lucid.newTx()
+    .payToWithData(toAddress, datumInline , { lovelace: amount })
+    .commit();
+    //Ký giao dịch
+    const signedTx = await tx.sign().commit();
+     //Gửi giao dịch
+    const txHash = await signedTx.submit();
+    console.log(`Bạn có thể kiểm tra giao dịch tại: https://preview.cexplorer.io/tx/${txHash}`);
 
 //  comparing
    console.log(fromText("Lucid"));
