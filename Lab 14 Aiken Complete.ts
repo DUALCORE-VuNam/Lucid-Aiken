@@ -1,4 +1,4 @@
-----------Tạo validator với cấu trúc mint và burn NFT-----------------
+// ----------Tạo validator với cấu trúc mint và burn NFT-----------------
 
 use aiken/collection/dict
 use aiken/collection/list
@@ -49,7 +49,7 @@ fn find_output(outputs: List<Output>, fee: Int, addr_cred: ByteArray) {
 }
 
 
-----------Lucid--------------
+// ----------Lucid--------------
 
 
 import {  Blockfrost, Lucid, Addresses,fromHex,toHex,applyParamsToScript, Data, Constr,fromText } from "https://deno.land/x/lucid@0.20.9/mod.ts";
@@ -134,7 +134,7 @@ async function readValidator(): Promise<SpendingValidator> {
   };
 }
 
----------------BURN-NFT------------------------
+// ---------------BURN-NFT------------------------
 
 const token_name = fromText("BK02_31");
 const fee_value = 10000000n;
