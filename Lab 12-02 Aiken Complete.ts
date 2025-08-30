@@ -1,6 +1,6 @@
-          Parametered 02-SC Lab 12
+//          Parametered 02-SC Lab 12
 
-------------------Aiken-----------------
+// ------------------Aiken-----------------
 use aiken/collection/list
 use aiken/crypto.{VerificationKeyHash}
 use cardano/transaction.{OutputReference, Transaction}
@@ -32,7 +32,7 @@ validator hello_parameterized(owner: VerificationKeyHash) {
 
 
 
------------------Lucid------------------
+// -----------------Lucid------------------
 import {  Blockfrost, Lucid, Addresses,fromHex,toHex,applyParamsToScript, Data, Constr,fromText } from "https://deno.land/x/lucid@0.20.9/mod.ts";
 import * as cbor from "https://deno.land/x/cbor@v1.4.1/index.js";
 
