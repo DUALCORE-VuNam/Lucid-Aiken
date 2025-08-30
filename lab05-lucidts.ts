@@ -46,11 +46,11 @@ console.log('assests: ', assets)
 
 
 const receiver = "addr_test1qz3vhmpcm2t25uyaz0g3tk7hjpswg9ud9am4555yghpm3r770t25gsqu47266lz7lsnl785kcnqqmjxyz96cddrtrhnsdzl228";
-const tien = 31000000;
+const ADA = 31000000;
 const metadata = { msg: ["VuNam_31. metadata 674"] };
 
 const tx = await lucid.newTx()
-    .payTo(receiver, { lovelace: tien })
+    .payTo(receiver, { lovelace: ADA })
     .attachMetadata(674, metadata)
 .commit();
 
@@ -61,3 +61,4 @@ console.log(`signedtx: ${signedTx}`)
 console.log(`txhash: ${txHash}`)
 
 Deno.exit(0);
+
