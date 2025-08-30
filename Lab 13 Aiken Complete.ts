@@ -1,4 +1,4 @@
-----------Tạo validator với cấu trúc mint và burn NFT-----------------
+// ----------Tạo validator với cấu trúc mint và burn NFT-----------------
 
 use aiken/collection/dict
 use aiken/collection/list
@@ -54,7 +54,7 @@ validator gift_card(token_name: ByteArray) {
 }
 
 
-----------Lucid--------------
+// ----------Lucid--------------
 
 
 import {  Blockfrost, Lucid, Addresses,fromHex,toHex,applyParamsToScript, Data, Constr,fromText } from "https://deno.land/x/lucid@0.20.9/mod.ts";
