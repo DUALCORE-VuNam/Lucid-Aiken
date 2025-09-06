@@ -100,7 +100,7 @@ const VestingSchema = Data.Object({
 
 
 
-Bài 4 : Tạo giao dịch đi kèm datum có lệnh lock và unlock UTXO.  //scripts alwaysSucceed 
+// Bài 4 : Tạo giao dịch đi kèm datum có lệnh lock và unlock UTXO.  //scripts alwaysSucceed 
 const alwaysSucceed_scripts1 = lucid.newScript({
   type: "PlutusV2",
   script: "49480100002221200101",
