@@ -15,8 +15,6 @@ const lucid = new Lucid({
   });
 
 lucid.selectReadOnlyWallet({address: addr, });
-// lucid.selectWalletFromSeed(MNEMONIC)
-// console.log (await lucid.wallet.address())
 const utxos = await lucid.wallet.getUtxos()
 for (let i = 0; i < utxos.length; i++) {
   if (utxos[i].txHash === tx_Hash) {
