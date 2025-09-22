@@ -1,14 +1,14 @@
------Add thêm trường dữ liệu của aiken toml-------------
+//-----Add thêm trường dữ liệu của aiken toml-------------
 [[dependencies]]
 name = "sidan-lab/vodka"
 version = "0.1.1-beta"
 source = "github"
 
 
-=> Chạy aiken check
+//=> Chạy aiken check
 
 
------Tạo Validator SC với điều kiện thụ hưởng theo bài giảng---------
+//-----Tạo Validator SC với điều kiện thụ hưởng theo bài giảng---------
 use aiken/crypto.{VerificationKeyHash}
 use cardano/transaction.{OutputReference, Transaction}
 
@@ -49,7 +49,7 @@ fail
 }
 }
 
-------Lấy mã CBOR trong file JSON qua LUCID-------
+//------Lấy mã CBOR trong file JSON----->LUCID-------
 import { Blockfrost, Lucid, Crypto, Data, fromText, Addresses, String, Integer } from "https://deno.land/x/lucid/mod.ts";
 
 // Provider selection
