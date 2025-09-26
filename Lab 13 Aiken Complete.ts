@@ -68,7 +68,7 @@ const lucid = new Lucid({
   ),
 });
 
-// Chọn ví từ bộ seed phrase:
+// Seed phrase:
 const seed = "december fantasy news diary valve valley lawn bachelor video degree success shy essay mushroom kidney lab melody happy limit lounge chest club have outside";
 lucid.selectWalletFromSeed(seed);
 
@@ -80,9 +80,9 @@ if (!payment_hash) {
   throw new Error("Failed to extract payment hash from address");
 }
 
-//-------------------------Mint-Lock----------------------
+//-------------------------Mint-Lock---------------------
 
-//===============Đọc mã CBOR của SC  ============================
+//===============Đọc mã CBOR của SC  ===========================
 async function readValidator(): Promise<SpendingValidator> {
   const validator = JSON.parse(await Deno.readTextFile("plutus.json")).validators[0];
       return {
